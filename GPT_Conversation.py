@@ -6,8 +6,10 @@ from openai import OpenAI
 import os
 import time
 
-client = AsyncOpenAI(  
-    api_key=os.getenv("API_KEY"),
+# Code to be executed on Streamlit Cloud
+client = AsyncOpenAI(
+    # This is the default and can be omitted    
+    api_key=st.secrets["API_key"],
 )
 
 class ChatHistory:
